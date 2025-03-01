@@ -51,11 +51,11 @@ console.log(foo({ state: 'success', response: { title: 'success' } }));
 
 const date = (value: Date | string) => {
   if (value instanceof Date) {
-    return value.toISOString();
+    return value.toUTCString();
   }
 
-  return new Date(value).toISOString();
+  return new Date(value).toUTCString();
 };
 
 console.log(date(new Date()));
-console.log(date('2025-03-01T14:28:12.600Z'));
+console.log(date('2025-03-01'));
